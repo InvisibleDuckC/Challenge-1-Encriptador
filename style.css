@@ -1,0 +1,241 @@
+.center{
+    width: 940px;
+    display: flex;
+    flex-direction:row;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    margin: 10px 10%;
+}
+
+.interfaz-encriptador{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0px 40px;
+}
+
+.bloque-texto{
+    display: flex;
+}
+
+.caja-texto{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    width: 100%;
+    color: #0A3871;
+    border: none;
+    background: #F3F5FC;
+}
+
+/* Seccion inferior, botones */
+
+.bloque-botones{
+    display: flex;
+    flex-direction: column;
+}
+
+.mensaje-advertencia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+}
+
+.mensaje-advertencia p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+    opacity: 0.8;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+
+.encriptar{             /*  */
+    display: flex;
+    padding: 10px;
+    gap: 8px;
+    width: 50%;
+    background: #0A3871;
+    border-radius: 24px;
+    border: 1px solid black;    
+    transition: 500ms;
+}
+
+.encriptar:hover, .desencriptar:hover, .copiar:hover{       /*  */
+    opacity: 80%;
+}
+
+.encriptar p, .desencriptar p, .copiar p{           /*  */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    flex-grow: 1;
+}
+
+.desencriptar{          /*  */
+    display: flex;
+    padding: 10px;
+    gap: 8px;
+    width: 50%;
+    background: #246de4;
+    border-radius: 24px;
+    border: 1px solid black;
+    transition: 500ms;
+}
+
+.interfaz-procesado{
+    display: flex;
+    padding: 10px;
+    width: 50%;
+    vertical-align: middle;
+    flex-direction: column;
+}
+
+/* Seccion texto no encontrado */
+
+.texto-no-encontrado{
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.muñeco{
+    display: flex;
+    width: 90%;
+}
+
+.texto-capsula{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.text1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: #343A40;
+}
+
+.text2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #495057;
+}
+
+/* Seccion texto encriptado */
+
+.texto-encriptado{
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    display: flex;
+    vertical-align:middle;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mostrar-texto{
+    height: 70%;
+    width: 90%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #495057;
+}
+
+.copiar{
+    display: flex;
+    padding: 10px;
+    gap: 8px;
+    width: 50%;
+    background: #6a96dc;
+    border-radius: 24px;
+    border: 1px solid black;
+    transition: 500ms;
+}
+
+footer{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 770px) {
+    .center{
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .muñeco{
+        display: none;
+    }
+    .interfaz-encriptador{
+        width: 90%;
+    }
+    .interfaz-procesado{
+        width: 90%;
+    }
+    .encriptar, .desencriptar, .copiar{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .botones{
+        flex-direction: column;
+        align-items: center;
+    }
+}

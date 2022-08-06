@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Encriptador</title>
+
+</head>
+<body>
+    <header>
+        <h1 class="logo"><img src="./images/Vector.png" alt=""></h1>
+    </header>
+    <main class="main">
+        <div class="center">
+            <section class="interfaz-encriptador">
+                <div class="bloque-texto">
+                    <textarea class="caja-texto" cols="35" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+                </div>
+                <div class="bloque-botones">
+                    <div class="mensaje-advertencia"><img src="./images/circle-exclamation.png" alt=""><p>Solo letras minúsculas y sin acentos</p></div>
+                    <div class="botones">
+                        <button class="encriptar" onclick="mostrarTextoEncriptado()"><p>Encriptar</p></button>
+                        <button class="desencriptar" onclick="mostrarTextoDesencriptado()"><p>Desencriptar</p></button>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="interfaz-procesado">
+                <div class="texto-encriptado">
+                    <div class="mostrar-texto">
+                    </div>
+                    <button class="copiar" onclick="copiar()"><p>Copiar</p></button>
+                </div>
+                <div class="texto-no-encontrado">
+                    <img class="muñeco" src="./images/Muñeco.png" alt="muñeco mensaje no encontrado">
+                    <div class="texto-capsula">
+                        <p class="text1">Ningún mensaje fue encontrado</p>
+                        <p class="text2">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        
+        <script src="./encriptado.js"></script>
+    </main>
+
+    <footer>
+        <p>Desarrollado por InvisibleDuckC - <a target="_blank" href="https://github.com/InvisibleDuckC">Github</a></p>
+    </footer>
+
+</body>
+</html>
