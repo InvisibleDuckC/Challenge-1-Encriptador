@@ -1,13 +1,34 @@
-let texto = "fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!";
-let texto1 = "entrando en la sala de video encontre a una niña sentada en el suelo";
-
 let cajaTexto = document.getElementsByClassName("caja-texto");
 let textoNoFound = document.getElementsByClassName("texto-no-encontrado");
 let textoEncriptado = document.getElementsByClassName("texto-encriptado");
-
+document.getElementById
 
 let parrafoCreado = false;
 
+const normalize = (function () {
+    var from =
+        "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç!¡¿?#$%&|´´`ªº^Ç*+/¨¨=(){}[].,;:_°>\\<\"'",
+      to = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+      mapping = {};
+  
+    for (var i = 0, j = from.length; i < j; i++)
+      mapping[from.charAt(i)] = to.charAt(i);
+  
+    return function (str, urls = true) {
+      var ret = [];
+      for (var i = 0, j = str.length; i < j; i++) {
+        var c = str.charAt(i);
+        if (mapping.hasOwnProperty(str.charAt(i))) ret.push(mapping[c]);
+        else ret.push(c);
+      }
+      return urls
+        ? ret.join("")
+        : ret
+            .join("")
+            .replace(/[^-A-Za-z0-9]+/g, "-")
+            .toLowerCase();
+    };
+})();
 
 function encript(texto){
     let newTexto = [];
@@ -96,7 +117,7 @@ function mostrarTextoEncriptado(){
     }
     let nuevoParrafo = document.createElement("p");
     nuevoParrafo.classList.add("texto-creado");
-    let textParrafo = document.createTextNode(encript(cajaTexto[0].value));
+    let textParrafo = document.createTextNode(encript(normalize(cajaTexto[0].value)));
     let datoNuevo = document.getElementsByClassName("mostrar-texto");
     datoNuevo[0].appendChild(nuevoParrafo);
     nuevoParrafo.appendChild(textParrafo);
@@ -112,7 +133,7 @@ function mostrarTextoDesencriptado(){
     }
     let nuevoParrafo = document.createElement("p");
     nuevoParrafo.classList.add("texto-creado");
-    let textParrafo = document.createTextNode(desencript(cajaTexto[0].value));
+    let textParrafo = document.createTextNode(desencript(normalize(cajaTexto[0].value)));
     let datoNuevo = document.getElementsByClassName("mostrar-texto");
     datoNuevo[0].appendChild(nuevoParrafo);
     nuevoParrafo.appendChild(textParrafo);
